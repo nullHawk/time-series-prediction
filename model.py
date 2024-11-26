@@ -4,7 +4,7 @@ import torch.nn as nn
 class LSTMPredictor(nn.Module):
     def __init__(self, n_hidden=51):
         super(LSTMPredictor, self).__init__()
-        self.hidden = n_hidden
+        self.n_hidden = n_hidden
         self.lstm1 = nn.LSTMCell(1, self.n_hidden)
         self.lstm2 = nn.LSTMCell(self.n_hidden, self.n_hidden)
         self.linear = nn.Linear(self.n_hidden, 1)
